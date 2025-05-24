@@ -1,0 +1,27 @@
+{
+  "name": "gamer-shop-mp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Petar-Dinev/gamer-shop-mp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Petar-Dinev/gamer-shop-mp/issues"
+  },
+  "homepage": "https://github.com/Petar-Dinev/gamer-shop-mp#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.15.0"
+  }
+}

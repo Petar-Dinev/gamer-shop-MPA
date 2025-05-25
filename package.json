@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/Petar-Dinev/gamer-shop-mp#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.2",
     "express-session": "^1.18.1",
-    "mongoose": "^8.15.0"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.1"
   }
 }

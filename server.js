@@ -1,6 +1,7 @@
 const express = require('express');
 const expressConfig = require('./configs/expressConfig');
 const dbConfig = require('./configs/dbConfig');
+const routersConfig = require('./configs/routersConfig');
 
 const port = 3000;
 
@@ -10,10 +11,7 @@ async function startServer() {
 
   await dbConfig(app)
   expressConfig(app);
-
-  app.get('/', (req, res) => {
-    res.send('Hello, World!');
-  });
+  routersConfig(app);
 
   app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);

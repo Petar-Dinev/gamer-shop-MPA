@@ -1,6 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const session = require('./middlewares/session');
+const session = require('../middlewares/session');
 const trim = require('../middlewares/trim');
 const hbs = require('express-handlebars').create({
     extname: '.hbs',

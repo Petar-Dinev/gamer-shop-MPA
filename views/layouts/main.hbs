@@ -21,6 +21,13 @@
         </nav>
     </header>
     <main>
+        {{#if errors}}
+        <div>
+            {{#each errors}}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
         {{{body}}}
     </main>
     <footer>

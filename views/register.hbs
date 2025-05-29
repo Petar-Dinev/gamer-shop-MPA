@@ -3,12 +3,12 @@
         <h2>Register page</h2>
     </header>
 
-    <form action="/auth/register">
+    <form action="/auth/register" method="POST">
         <label for="email">Email:
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="{{body.email}}">
         </label>
         <label for="username">Username:
-            <input type="username" name="username" id="username">
+            <input type="username" name="username" id="username" value="{{body.username}}">
         </label>
         <label for="password">Password:
             <input type="password" name="password" id="password">

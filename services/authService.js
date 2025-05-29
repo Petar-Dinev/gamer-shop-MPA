@@ -11,12 +11,6 @@ async function register(email, username, password) {
         throw new Error('Email already exists');
     }
 
-    const existingUserByUsername = await User.findOne({ username }).collation({ locale: 'en', strength: 2 });
-
-    if (existingUserByUsername) {
-        throw new Error('Username already exists');
-    }
-
     const hashedPassword = await brcypt.hash(password, 10);
 
     const user = new User({ email, username, password: hashedPassword });

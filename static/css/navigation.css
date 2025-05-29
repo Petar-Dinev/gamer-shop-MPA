@@ -1,0 +1,27 @@
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #921414;
+    padding: 1rem;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: center;
+}
+
+.main-header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding-bottom: 0;
+}
+
+.main-header nav ul li a{
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 10px;
+}

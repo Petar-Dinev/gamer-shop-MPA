@@ -1,14 +1,15 @@
+const { isGuest } = require('../middlewares/guards');
 const { register, login } = require('../services/authService');
 
 const authController = require('express').Router();
 
-authController.get('/register', (req, res) => {
+authController.get('/register', isGuest(), (req, res) => {
     res.render('register', {
         title: 'Register page'
     });
 });
 
-authController.post('/register', async (req, res) => {
+authController.post('/register', isGuest(), async (req, res) => {
     const { email, username, password, rePass } = req.body;
 
     try {
@@ -33,18 +34,18 @@ authController.post('/register', async (req, res) => {
     }
 });
 
-authController.get('/login', (req, res) => {
+authController.get('/login', isGuest(), (req, res) => {
     res.render('login', {
         title: 'Login page'
     });
 });
 
-authController.post('/login', async (req, res) => {
+authController.post('/login', isGuest(), async (req, res) => {
     const { email, password } = req.body;
 
     try {
         if (email == '' || password == '') {
-            throw new Error('All fields required!')
+            throw new Error('All fields required!');
         };
         const token = await login(email, password);
         res.cookie('token', token);
@@ -55,7 +56,7 @@ authController.post('/login', async (req, res) => {
             body: req.body,
             errors: [err.message]
         });
-    }
+    };
 });
 
 

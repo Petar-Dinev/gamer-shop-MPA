@@ -1,4 +1,4 @@
-const { isGuest } = require('../middlewares/guards');
+const { isGuest, hasUser } = require('../middlewares/guards');
 const { register, login } = require('../services/authService');
 
 const authController = require('express').Router();
@@ -58,6 +58,11 @@ authController.post('/login', isGuest(), async (req, res) => {
         });
     };
 });
+
+authController.get('/logout', hasUser(), (req, res) => {
+    res.clearCookie('token');
+    res.redirect('/');
+})
 
 
 module.exports = authController;

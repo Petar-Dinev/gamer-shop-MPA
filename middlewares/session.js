@@ -5,6 +5,7 @@ module.exports = () => (req, res, next) => {
         try {
             const userData = verifyToken(req.cookies.token);
             req.user = userData;
+            res.locals.isAuthenticated = true;
         } catch (err) {
             console.log('Invalid token:', err.message);
             res.clearCookie('token'); // Clear the cookie if token is invalid

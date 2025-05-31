@@ -1,0 +1,15 @@
+<section>
+    <h2>Games catalog</h2>
+
+    <section>
+        {{#if games.length}}
+        <ul>
+            {{#each games}}
+            {{> gameItem}}
+            {{/each}}
+        </ul>
+        {{else}}
+        <p>No games yet.</p>
+        {{/if}}
+    </section>
+</section>

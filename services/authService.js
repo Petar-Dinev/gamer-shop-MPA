@@ -30,6 +30,7 @@ async function login(email, password) {
     if (!isValid) {
         throw new Error('Invalid email or password');
     }
+    
     return createToken(user);
 }
 

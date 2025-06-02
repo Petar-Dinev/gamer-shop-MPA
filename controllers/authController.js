@@ -1,5 +1,6 @@
 const { isGuest, hasUser } = require('../middlewares/guards');
 const { register, login } = require('../services/authService');
+const { errorParser } = require('../utils/parser');
 
 const authController = require('express').Router();
 
@@ -33,7 +34,7 @@ authController.post('/register', isGuest(), async (req, res) => {
         res.render('register', {
             title: 'Register page',
             body: req.body,
-            errors: [err.message]
+            errors: errorParser(err)
         })
     }
 });
@@ -58,7 +59,7 @@ authController.post('/login', isGuest(), async (req, res) => {
         res.render('login', {
             title: 'Login page',
             body: req.body,
-            errors: [err.message]
+            errors: errorParser(err)
         });
     };
 });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <title>{{title}}</title>
 </head>
 
@@ -14,11 +14,11 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
                 <li><a href="/games">Catalog</a></li>
+                <li><a href="/about">About</a></li>
                 {{#unless isAuthenticated}}
-                <li><a href="/auth/register">Register</a></li>
                 <li><a href="/auth/login">Login</a></li>
+                <li><a href="/auth/register">Register</a></li>
                 {{else}}
                 <li><a href="/auth/logout">Logout</a></li>
                 {{/unless}}

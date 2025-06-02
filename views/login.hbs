@@ -3,16 +3,16 @@
         <h2>Login form</h2>
     </header>
 
-    <section>
-        <form action="/auth/login" method="POST">
-            <label for="email">
-                Email: <input type="email" name="email" id="email" value="{{body.email}}">
-            </label>
-            <label for="password">
-                Password: <input type="password" name="password" id="password">
-            </label>
-            <input type="submit" value="Log in">
-        </form>
+    <form action="/auth/login" method="POST">
+        <label for="email">
+            Email: <input type="email" name="email" id="email" value="{{body.email}}">
+        </label>
+        <label for="password">
+            Password: <input type="password" name="password" id="password">
+        </label>
+        <input type="submit" value="Log in">
+    </form>
+    <footer>
         <p>If you don't have account yet. You can create <a href="/auth/register">here</a>.</p>
-    </section>
+    </footer>
 </section>

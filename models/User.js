@@ -1,8 +1,17 @@
 const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema({
-    email: { type: String, required: true},
-    username: { type: String, required: true},
+    email: { 
+        type: String, 
+        validate: {
+            validator: (value) => /^[a-zA-Z0-9]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/i.test(value),
+            message: 'Invalid email'
+        }
+    },
+    username: { 
+        type: String, 
+        minLength: [3, 'Username must be at least 3 characters long']
+    },
     password: { type: String, required: true }
 });
 

@@ -17,6 +17,10 @@ authController.post('/register', isGuest(), async (req, res) => {
             throw new Error('All fields required!')
         }
 
+        if (password.length < 6) {
+            throw new Error('Password must be at least 6 characters long')
+        }
+
         if (password != rePass) {
             throw new Error('Passwords don\'t match!')
         }
